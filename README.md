@@ -4,7 +4,6 @@
 ## AIM:
  To design a website to calculate the power of a lamp filament in an incandescent bulb in the server side. 
 
-
 ## FORMULA:
 P = I<sup>2</sup>R
 <br> P --> Power (in watts)
@@ -12,7 +11,6 @@ P = I<sup>2</sup>R
 <br> R --> Resistance
 
 ## DESIGN STEPS:
-
 ### Step 1:
 Clone the repository from GitHub.
 
@@ -32,7 +30,6 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
-
 ```
 math.html
 
@@ -106,7 +103,6 @@ math.html
 <body>
     <div class="container">
         <h1>Rectangle Area Calculator</h1>
-
         <!-- Form to input length and breadth -->
         <form method="POST">
             {% csrf_token %}
@@ -171,11 +167,7 @@ urlpatterns = [
 ```
 ## SERVER SIDE PROCESSING:
 ![alt text](<Screenshot (46).png>)
-
-
 ## HOMEPAGE:
-
 ![alt text](<Screenshot (47).png>)
-
 ## RESULT:
 The program for performing server side processing is completed successfully.
