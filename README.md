@@ -62,30 +62,25 @@ math.html
             width: 100%;
             max-width: 400px;
         }
-
         h1 {
             text-align: center;
             color: #333;
         }
-
         form {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-
         label {
             font-weight: bold;
             color: #333;
         }
-
         input {
             padding: 8px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         button {
             padding: 10px;
             background-color: #4CAF50;
@@ -94,16 +89,13 @@ math.html
             border-radius: 4px;
             cursor: pointer;
         }
-
         button:hover {
             background-color: #45a049;
         }
-
         .result {
             margin-top: 20px;
             text-align: center;
         }
-
         .error {
             color: red;
             font-size: 14px;
@@ -112,7 +104,6 @@ math.html
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Rectangle Area Calculator</h1>
 
@@ -121,19 +112,15 @@ math.html
             {% csrf_token %}
             <label for="length">Length (in mm):</label>
             <input type="text" id="length" name="length" value="{{ l }}">
-
             <label for="breadth">Breadth (in mm):</label>
             <input type="text" id="breadth" name="breadth" value="{{ b }}">
-
             <button type="submit">Calculate Area</button>
         </form>
-
         <!-- Display the result if area is calculated -->
         <div class="result">
             <h2>Result:</h2>
             <p>The area of the rectangle is: <strong>{{ area }}</strong> square millimeters (mm²).</p>
         </div>
-
         <!-- Display an error message if there is one -->
         {% if error %}
             <div class="error">
@@ -141,22 +128,17 @@ math.html
             </div>
         {% endif %}
     </div>
-
 </body>
 </html>
 
 veiws.py
 
 from django.shortcuts import render
-
-def rectarea(request):
-    # Initial context for rendering
+def rectarea(request):  
     context = {}
     context['area'] = "0"
     context['l'] = "0"
     context['b'] = "0"
-
-    # Handle POST request (when the form is submitted)
     if request.method == 'POST':
         print("POST method is used")
         l = request.POST.get('length', '0')
@@ -175,13 +157,11 @@ def rectarea(request):
             context['error'] = "Please enter valid numbers for length and breadth."
     return render(request, 'mathapp/math.html', context)
 
-
 urls.py
 
 from django.contrib import admin
 from django.urls import path
 from mathapp import views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('areaofrectangle/', views.rectarea, name="areaofrectangle"),
@@ -196,7 +176,6 @@ urlpatterns = [
 ## HOMEPAGE:
 
 ![alt text](<Screenshot (47).png>)
-
 
 ## RESULT:
 The program for performing server side processing is completed successfully.
